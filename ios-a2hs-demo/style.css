@@ -1,0 +1,21 @@
+/* CSS files add styling rules to your content */
+
+body {
+  background-color: #f18e1d;
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 12pt;
+  margin: 2em;
+}
+
+h1 {
+  color: #0595bc;   
+  font-size: 1.5em; 
+}
+
+img {
+  display: block;
+}
+
+span {
+  color: #0595bc;
+}

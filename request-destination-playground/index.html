@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>`Request.destination` Playground</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Anti-pattern: registering the service worker blockingly -->
+    <script src="/register-sw.js"></script>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho">
+    <link rel="stylesheet" href="/style.css">
+    
+    <link rel="manifest" href="/manifest.webmanifest">
+    
+    <link rel="shortcut icon" href="https://cdn.glitch.com/39a33509-f87b-4b7c-b649-95e32fc4ca6b%2Ffavicon.ico?1534322610412">
+
+  </head>  
+  <body>
+    <h1><code>Request.destination</code> Playground</h1>
+    
+    <h2>
+      Request logs:
+    </h2>
+    
+    <ul id="messages"></ul>
+    
+    <div>
+      <img id="img" alt="Jake" width="430" height="328">
+    </div>
+    
+    <p>
+      <button id="xhr" type="button">Click for XHR</button>
+    </p>
+    
+    <p>    
+      <button id="fetch" type="button">Click for fetch</button>    
+    </p>
+
+    <iframe height="50" width="150" id="iframe"></iframe>
+    
+    <div>
+      <video id="video" controls crossorigin autoplay loop muted playsinline>
+        <track id="track" label="English subtitles" kind="subtitles" srclang="en" default></track>
+      </video>
+    </div>
+  
+    <div>
+      <audio autoplay loop muted id="audio" controls></audio>
+    </div>
+    
+    <script src="/script.js"></script>
+    
+  </body>
+</html>
