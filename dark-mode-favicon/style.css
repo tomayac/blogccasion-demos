@@ -1,0 +1,42 @@
+/* CSS files add styling rules to your content */
+
+:root {
+  background-color: white;
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: black;
+    color: white;
+  }
+}
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+img,
+svg {
+  display: block;
+}
+
+a {
+  color: red;
+}
+
+.black {
+  color: black;
+  background-color: yellow;
+}
+
+.yellow {
+  color: yellow;
+  background-color: black;
+}

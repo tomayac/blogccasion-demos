@@ -1,0 +1,25 @@
+:root {
+  color-scheme: dark light;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {  
+  font-family: system-ui, sans-serif;
+  max-width: clamp(320px, 90%, 1000px);  
+  margin: auto;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}

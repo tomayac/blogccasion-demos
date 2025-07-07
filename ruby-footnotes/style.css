@@ -1,0 +1,91 @@
+:root {
+  color-scheme: dark light;  
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+}
+
+h1 {
+  color: #373fff;
+}
+
+a {
+  color: red;
+}
+
+/* Footnote text styling. */
+rt {
+  background-color: #eee;  
+  color: #111;
+  font-size: 0.75rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  max-width: 30ch;
+}
+
+/* Images in footnote text styling. */
+rt img {
+  width: 100%;
+  height: auto;  
+  display: block;
+}
+
+/* Footnote styling */
+ruby:after {
+  color: red;
+  cursor: pointer;
+  font-size: 0.75rem;
+  vertical-align: top;
+}
+
+
+/* Behavior */
+
+
+/* Set up the footnote counter and display style. */
+body {
+  counter-reset: footnotes;  
+}
+
+/* Make footnote text appear as `inline-block`. */
+ruby {
+  --footnote-display: inline-block;
+}
+
+/* Display the actual footnote [1]. */
+ruby:after {
+  counter-increment: footnotes;
+  content: " [" counter(footnotes) "]";  
+}
+
+/* Remove the focus ring. */
+ruby:focus {
+  outline: none;
+}
+
+/* Display the footnote text. */
+ruby:focus rt {
+  display: var(--footnote-display);  
+}
+
+/* Hide footnote text by default. */
+rt {
+  display: none;
+}
+
+/**
+ * Make sure the footnote text remains visible,
+ * so contained links can be clicked.
+ */
+rt:hover {
+  display: var(--footnote-display);
+}
