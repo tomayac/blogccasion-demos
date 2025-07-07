@@ -14,18 +14,18 @@ const init = () => {
         or <span>${manifest.name}</span> (long), launch in <span>${manifest.display}</span> mode,
         have the start URL <span>${manifest.start_url}</span>
         (currently: <span>${document.location.pathname + document.location.hash}</span>),
-        have a scope of <span>${manifest.scope}</span> (<a href="/in-scope/index.html">navigate in-scope</a>,
-        <a href="https://glitch.com/edit/#!/ios-a2hs-demo">navigate out-scope</a>),
+        have a scope of <span>${manifest.scope}</span> (<a href="in-scope/index.html">navigate in-scope</a>,
+        <a href="https://example.com/">navigate out-scope</a>),
         and use one of the following <span>icons</span>:`;
     fragment.appendChild(p);
     manifest.icons.forEach((icon) => {
       let img = document.createElement('img');
       img.src = icon.src;
-      fragment.appendChild(img);      
+      fragment.appendChild(img);
     });
     document.body.appendChild(fragment);
   });
-  
+
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('serviceworker.js');
@@ -33,4 +33,4 @@ const init = () => {
   }
 };
 
-init();  
+init();

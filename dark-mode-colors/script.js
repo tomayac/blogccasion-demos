@@ -1,7 +1,3 @@
-if (window.location.protocol !== 'https:') {
-  window.location.protocol = 'https:';
-}
-
 const div = document.querySelector('div');
 const form = document.querySelector('form');
 const radios = Array.from(form.querySelectorAll('input[type="radio"]'));
@@ -22,8 +18,8 @@ const submitURLs = [
 
 for (let i = 0; i < 30; i++) {
   const figure = document.createElement('figure');
-  const img = new Image();  
-  const figcaption = document.createElement('figcaption');  
+  const img = new Image();
+  const figcaption = document.createElement('figcaption');
   figcaption.textContent = `This is the amazing photo with the index ${i}`;
   figure.appendChild(img);
   figure.appendChild(figcaption);
@@ -43,25 +39,25 @@ const onSubmit = () => {
   ranges.forEach((range, i) => {
     root.style.setProperty(`--${range.id}`, `${range.value}%`);
     spans[i].textContent = `${range.value}%`;
-  }); 
+  });
   let selected;
-  if ((selected = radios.filter((input, i) => {    
+  if ((selected = radios.filter((input, i) => {
     if (input.checked) {
       a.href = submitURLs[i]();
       div.style.display = 'grid';
       section.style.display = 'block';
       if (input.id === 'regular') {
-        ranges[0].disabled = true;        
-        ranges[1].disabled = true;        
+        ranges[0].disabled = true;
+        ranges[1].disabled = true;
       } else if (input.id === 'grayscale') {
-        ranges[0].disabled = false;        
-        ranges[1].disabled = true;        
+        ranges[0].disabled = false;
+        ranges[1].disabled = true;
       } else if (input.id === 'invert')  {
-        ranges[0].disabled = true;        
-        ranges[1].disabled = false;        
+        ranges[0].disabled = true;
+        ranges[1].disabled = false;
       } else {
-        ranges[0].disabled = false;        
-        ranges[1].disabled = false;                
+        ranges[0].disabled = false;
+        ranges[1].disabled = false;
       }
     }
     return input.checked

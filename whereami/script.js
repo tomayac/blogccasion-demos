@@ -1,20 +1,15 @@
 (async () => {
-  // Redirect to HTTPS  
-  if (window.location.protocol !== 'https:') {
-    window.location.protocol = 'https:';
-  }
-  
   let id = null;
   let ping = null;
   let wakeLockObj = null;
   let wakeLockRequest;
   const userAgent = navigator.userAgent;
-  
-  const log = document.getElementById('log');  
+
+  const log = document.getElementById('log');
   const track = document.getElementById('track');
   const location = document.getElementById('location');
-  const wakelock = document.getElementById('wakelock');  
- 
+  const wakelock = document.getElementById('wakelock');
+
   if ('getWakeLock' in navigator) {
     wakelock.textContent = "Wake lock not created yet.";
     try {
@@ -36,28 +31,28 @@
     }
     if (wakeLockRequest) {
       wakeLockRequest.cancel();
-      wakeLockRequest = null;      
+      wakeLockRequest = null;
       return;
     }
     wakeLockRequest = wakeLockObj.createRequest();
   };
-  
-  const stopTracking = () => {        
-    navigator.geolocation.clearWatch(id);      
+
+  const stopTracking = () => {
+    navigator.geolocation.clearWatch(id);
     id = null;
     track.textContent = 'Start tracking';
     location.style.display = 'none';
     clearInterval(ping);
     ping = null;
   };
-  
+
   const startTracking = () => {
-    
+
     ping = setInterval(() => {
-      const timestamp = new Date();      
-      fetch(`https://thereami.glitch.me/ping?userAgent=${encodeURIComponent(userAgent)}&timestamp=${timestamp}`);      
+      const timestamp = new Date();
+      fetch(`https://tomayac.github.io/blogccasion-demos/thereami/ping?userAgent=${encodeURIComponent(userAgent)}&timestamp=${timestamp}`);
     }, 30000)
-    
+
     const success = async (pos) => {
       const crd = pos.coords;
       const li = document.createElement('li');
@@ -71,10 +66,10 @@
           </div>`;
       log.appendChild(li);
       try {
-        fetch(`https://thereami.glitch.me/track?latitude=${crd.latitude}&longitude=${crd.longitude}&userAgent=${encodeURIComponent(userAgent)}&timestamp=${timestamp}`);
+        fetch(`https://tomayac.github.io/blogccasion-demos/thereami/track?latitude=${crd.latitude}&longitude=${crd.longitude}&userAgent=${encodeURIComponent(userAgent)}&timestamp=${timestamp}`);
       } catch (err) {
         console.error('Logging failed', err);
-      }   
+      }
     };
 
     const error = (err) => {
@@ -88,17 +83,17 @@
     };
 
     log.innerHTML = '';
-    id = navigator.geolocation.watchPosition(success, error, options);  
-    track.textContent = 'Stop tracking';      
-    location.style.display = 'block';          
+    id = navigator.geolocation.watchPosition(success, error, options);
+    track.textContent = 'Stop tracking';
+    location.style.display = 'block';
   };
-  
+
   track.addEventListener('click', () => {
-    toggleWakeLock();    
+    toggleWakeLock();
     if (id) {
       stopTracking();
     } else {
       startTracking();
-    }    
-  });  
+    }
+  });
 })();

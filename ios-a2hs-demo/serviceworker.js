@@ -5,15 +5,15 @@ self.addEventListener('install', (event) => {
     caches.open(VERSION)
     .then((cache) => {
       return cache.addAll([
-        '/',
-        '/index.html',
+        './',
+        'index.html',
         'script.js',
         'style.css',
         'manifest.webmanifest'
       ]);
     })
   );
-  self.skipWaiting();  
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', event => {
@@ -34,6 +34,6 @@ self.addEventListener('fetch', (event) => {
         });
         return cacheResponse || fetchPromise;
       });
-    })    
+    })
   );
 });

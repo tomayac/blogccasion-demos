@@ -8,87 +8,87 @@
   "theme_color": "#f18e1d",
   "description": "A test app to check what properties of the Web App Manifest are respected by iOS.",
   "icons": [{
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_16x16.png?1524140295034",
+    "src": "./icons/icon_16x16.png",
     "sizes": "16x16",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_32x32.png?1524140295108",
+    "src": "./icons/icon_32x32.png",
     "sizes": "32x32",
-    "type": "image/png"    
+    "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_40x40.png?1524141940974",
+    "src": "./icons/icon_40x40.png",
     "sizes": "40x40",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_48x48.png?1524140295155",
+    "src": "./icons/icon_48x48.png",
     "sizes": "48x48",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_58x58.png?1524141941143",
+    "src": "./icons/icon_58x58.png",
     "sizes": "58x58",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_60x60.png?1524141941421",
+    "src": "./icons/icon_60x60.png",
     "sizes": "60x60",
     "type": "image/png"
-  }, {    
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_64x64.png?1524140295274",
+  }, {
+    "src": "./icons/icon_64x64.png",
     "sizes": "64x64",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_72x72.png?1524140295228",
+    "src": "./icons/icon_72x72.png",
     "sizes": "72x72",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_80x80.png?1524141941645",
+    "src": "./icons/icon_80x80.png",
     "sizes": "80x80",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_87x87.png?1524141941735",
+    "src": "./icons/icon_87x87.png",
     "sizes": "87x87",
     "type": "image/png"
-  }, {      
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_96x96.png?1524140295328",
+  }, {
+    "src": "./icons/icon_96x96.png",
     "sizes": "96x96",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_120x120.png?1524141942264",
+    "src": "./icons/icon_120x120.png",
     "sizes": "120x120",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_128x128.png?1524140295443",
+    "src": "./icons/icon_128x128.png",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_144x144.png?1524140295513",
+    "src": "./icons/icon_144x144.png",
     "sizes": "144x144",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_152x152.png?1524141510270",
+    "src": "./icons/icon_152x152.png",
     "sizes": "152x152",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_167x167.png?1524141510183",
+    "src": "./icons/icon_167x167.png",
     "sizes": "167x167",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_168x168.png?1524140295611",
+    "src": "./icons/icon_168x168.png",
     "sizes": "168x168",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_180x180.png?1524141510355",
+    "src": "./icons/icon_180x180.png",
     "sizes": "180x180",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_192x192.png?1524140295702",
+    "src": "./icons/icon_192x192.png",
     "sizes": "192x192",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_256x256.png?1524140295787",
+    "src": "./icons/icon_256x256.png",
     "sizes": "256x256",
     "type": "image/png"
   }, {
-    "src": "https://cdn.glitch.com/c9815aa7-ab0f-42f0-8578-74f577b7d686%2Ficon_512x512.png?1524140296136",
+    "src": "./icons/icon_512x512.png",
     "sizes": "512x512",
     "type": "image/png"
   }]

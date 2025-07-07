@@ -21,8 +21,8 @@ img, video {
   height: auto;
 }
 
-p { 
-  background-image: url('https://cdn.glitch.com/39a33509-f87b-4b7c-b649-95e32fc4ca6b%2Fbackground.gif?1534258459467');
+p {
+  background-image: url('background.gif');
   background-position: center;
   height: 50px;
   width: 150px;

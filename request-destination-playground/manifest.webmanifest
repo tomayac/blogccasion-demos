@@ -2,9 +2,9 @@
   "name": "Request.destination Playground",
   "short_name": "Req.dest",
   "display": "browser",
-  "start_url": "https://request-destination-playground.glitch.me/",
+  "start_url": "./",
   "icons": [{
-    "sizes": "any",
-    "src": "https://cdn.glitch.com/39a33509-f87b-4b7c-b649-95e32fc4ca6b%2Ffavicon.ico?1534322610412"
+    "sizes": "32x32",
+    "src": "favicon.ico"
   }]
 }

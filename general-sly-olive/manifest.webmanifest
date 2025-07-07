@@ -6,7 +6,7 @@
   "description": "Tree clothes",
   "scope": "/",
   "icons": [{
-    "src": "https://dark-mode-favicon.glitch.me/icon.svg",
+    "src": "./icon.svg",
     "sizes": "144x144",
     "type": "image/svg+xml"
   }]
