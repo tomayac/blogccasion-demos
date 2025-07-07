@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Animated Favicon</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script>
+      if (location.protocol !== "https:") {
+        location.protocol = "https:";
+      }
+    </script>
+
+    <link rel="icon" />
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Animated SVG favicon</h1>
+    <h2>Three methods to animate SVGs</h2>
+
+    <fieldset>
+      <legend>Choose an animated SVG as favicon:</legend>
+      <label><input type="radio" name="icons" id="css" />CSS</label>
+      <label><input type="radio" name="icons" id="js" />JS</label>
+      <label><input type="radio" name="icons" id="smil" />SMIL</label>
+    </fieldset>
+
+    <div class="container">
+      <div>
+        <img src="icon_css.svg" />
+        <p>CSS animation in <code>img</code>.</p>
+
+        <iframe src="icon_css.svg" scrolling="no"></iframe>
+        <p>CSS animation in <code>iframe</code>.</p>
+
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            svg {
+              max-width: 100px;
+            }
+
+            circle {
+              animation: 2s linear infinite both circle-animation;
+              display: block;
+              transform-origin: 50% 50%;
+            }
+
+            @keyframes circle-animation {
+              0% {
+                transform: scale(1);
+              }
+              100% {
+                transform: scale(0);
+              }
+            }
+          </style>
+          <circle fill="red" cx="50" cy="50" r="45" />
+        </svg>
+        <p>CSS animation inlined.</p>
+      </div>
+      <div>
+        <img src="icon_js.svg" />
+        <p>JS animation in <code>img</code>.</p>
+
+        <iframe src="icon_js.svg" scrolling="no"></iframe>
+        <p>JS animation in <code>iframe</code>.</p>
+
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle fill="blue" cx="50" cy="50" r="45" />
+          <script type="text/javascript">
+            <![CDATA[ const circle = document.querySelector('circle'); let r =
+            45; setInterval(() => { circle.setAttribute('r', r--); if (r === 0)
+            { r = 45; } }, 1000 / 60); ]]>
+          </script>
+        </svg>
+        <p>JS animation inlined.</p>
+      </div>
+      <div>
+        <img src="icon_smil.svg" />
+        <p>SMIL animation in <code>img</code>.</p>
+
+        <iframe src="icon_smil.svg" scrolling="no"></iframe>
+        <p>SMIL animation in <code>iframe</code>.</p>
+
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle fill="green" cx="50" cy="50" r="45">
+            <animate
+              attributeName="r"
+              from="45"
+              to="0"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        </svg>
+        <p>SMIL animation inlined.</p>
+      </div>
+    </div>
+  </body>
+</html>

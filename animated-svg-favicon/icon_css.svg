@@ -1,0 +1,23 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    svg {
+      max-width: 100px;
+    }
+
+    circle {
+      animation: 2s linear infinite both circle-animation;
+      display: block;      
+      transform-origin: 50% 50%;
+    }
+    
+    @keyframes circle-animation {
+      0% {       
+        transform: scale(1);
+      }
+      100% {       
+        transform: scale(0);
+      }
+    }
+  </style>
+  <circle fill="red" cx="50" cy="50" r="45"/>
+</svg>

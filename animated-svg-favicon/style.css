@@ -1,0 +1,40 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+p {
+  margin-bottom: 4rem;
+}
+
+img, iframe {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+iframe {
+  border: none;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+}
+
+.container div {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
