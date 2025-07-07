@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Directory Index: blogccasion-demos</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    h1 { font-size: 1.5rem; }
+    ul { line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <h1>Directories in <code>tomayac/blogccasion-demos</code></h1>
+  <ul id="dir-list"><li>Loading...</li></ul>
+
+  <script>
+    const owner = "tomayac";
+    const repo = "blogccasion-demos";
+    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/`;
+
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((files) => {
+        const dirs = files.filter(item => item.type === "dir");
+        const list = document.getElementById("dir-list");
+        list.innerHTML = "";
+        dirs.forEach(dir => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `https://github.com/${owner}/${repo}/tree/main/${dir.name}`;
+          a.textContent = dir.name;
+          a.target = "_blank";
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+        document.getElementById("dir-list").innerHTML = "<li>Error loading directory list.</li>";
+      });
+  </script>
+</body>
+</html>
