@@ -84,6 +84,7 @@ button.addEventListener('click', async () => {
       output.append(chunk);
     }
   } catch (error) {
+    output.textContent = error.message;
     console.error(error.name, error.message);
   }
 });
