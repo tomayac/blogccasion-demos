@@ -10,7 +10,7 @@ const createSession = async (options = {}) => {
     if (!('LanguageModel' in self)) {
       throw new Error('LanguageModel is not supported.');
     }
-    const availability = await LanguageModel.availability();
+    const availability = await LanguageModel.availability(options);
     if (availability === 'unavailable') {
       throw new Error('LanguageModel is not available.');
     }
