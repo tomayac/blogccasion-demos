@@ -1,18 +1,49 @@
-<style>
-  progress[hidden] ~ label {
-    display: none;
-  }
-  img {
-    width: 600px;
-    max-width: 100%;
-    height: auto;
-  }
-</style>
-<button type="button">Identify product number</button>
-<div>
-  <progress hidden id="progress" value="0"></progress>
-  <label for="progress">Model download progress</label>
-</div>
-<div>
-  <img src="washing-machine.jpg" alt="Identification plate of a washing machine." width="4080" height="3072">
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      http-equiv="origin-trial"
+      content="AvKXZEAcZSd7J6+HLZsuZ4AF4+rtIB9u1LUCRiB+3HvhiP1ncm1OIjTqb3h/bUobHYJA1qAyGYuQ0iGwxJt1rQ8AAABleyJvcmlnaW4iOiJodHRwczovL3RvbWF5YWMuZ2l0aHViLmlvOjQ0MyIsImZlYXR1cmUiOiJBSVByb21wdEFQSU11bHRpbW9kYWxJbnB1dCIsImV4cGlyeSI6MTc3NDMxMDQwMH0="
+    />
+    <title>Built-in AI Demo — Product Number Identification</title>
+    <style>
+      :root {
+        color-scheme: dark light;
+        font-family: system-ui, sans-serif;
+      }
+      progress[hidden] ~ label {
+        display: none;
+      }
+      img {
+        width: 500px;
+        max-width: 100%;
+        height: auto;
+      }
+      div {
+        margin-block: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Built-in AI Demo</h1>
+    <h2>Product Number Identification</h2>
+    <div>
+      <img
+        src="washing-machine.jpg"
+        alt="Identification plate of a washing machine."
+        width="4080"
+        height="3072"
+      />
+    </div>
+    <button type="button">Identify product number</button>
+    <output></output>
+    <div>
+      <progress hidden id="progress" value="0"></progress>
+      <label for="progress">Model download progress</label>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

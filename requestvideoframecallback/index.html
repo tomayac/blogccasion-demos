@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>requestVideoFrameCallback Demo</title>
@@ -14,16 +14,18 @@
   <body>
     <h1><code>requestVideoFrameCallback</code> Demo</h1>
     <p>
-      Start <button type="button">⏯</button> playing the video. Pause the video to read the metadata.
-      Drawing video frames on the canvas is synced with the actual video framerate.
-      For details, check out the blog post
-      <a href="https://blog.tomayac.com/2020/05/15/the-requestvideoframecallback-api/">
-        The requestVideoFrameCallback API
-      </a>.
+      Start <button type="button">⏯</button> playing the video. Pause the video
+      to read the metadata. Drawing video frames on the canvas is synced with
+      the actual video framerate. For details, check out the blog post
+      <a
+        href="https://blog.tomayac.com/2020/05/15/the-requestvideoframecallback-api/"
+      >
+        The requestVideoFrameCallback API </a
+      >.
     </p>
     <video width="640" height="360" controls playsinline></video>
     <canvas width="640" height="360"></canvas>
     <p><span id="fps-info">0</span>fps</p>
-    <p><pre id="metadata-info"></pre></p>
+    <pre id="metadata-info"></pre>
   </body>
 </html>

@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Async Clipboard API</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <!-- import the webpage's javascript file -->
     <script src="script.js" defer></script>
   </head>
@@ -14,47 +14,70 @@
     <h1>Async Clipboard API</h1>
     <div class="note">
       Read more about this demo in my blog post
-      <a href="https://blog.tomayac.com/2020/03/20/multi-mime-type-copying-with-the-async-clipboard-api/">
-        Multi-MIME Type Copying with the Async Clipboard API
-      </a>.
+      <a
+        href="https://blog.tomayac.com/2020/03/20/multi-mime-type-copying-with-the-async-clipboard-api/"
+      >
+        Multi-MIME Type Copying with the Async Clipboard API </a
+      >.
     </div>
     <h2>SVG Image</h2>
     <p>
-      When you copy the SVG image, the app converts the SVG image to PNG,
-      since the browser can copy that for sure.
-      It also
+      When you copy the SVG image, the app converts the SVG image to PNG, since
+      the browser can copy that for sure. It also
       <em>tries</em>
-      to copy the SVG representation directly,
-      and it always copies a textual representation based on the image's
+      to copy the SVG representation directly, and it always copies a textual
+      representation based on the image's
       <code>alt</code>
       text.
-      <img crossorigin data-mime-type="image/svg+xml" width="1937" height="1352" alt="Symptoms of Coronavirus disease" src="Symptoms_of_coronavirus_disease_2019_2.0.svg">
+      <img
+        crossorigin
+        data-mime-type="image/svg+xml"
+        width="1937"
+        height="1352"
+        alt="Symptoms of Coronavirus disease"
+        src="Symptoms_of_coronavirus_disease_2019_2.0.svg"
+      />
       <button id="copy-svg" type="button">Copy SVG image</button>
     </p>
     <h2>PNG Image</h2>
     <p>
-      When you copy the PNG image, the app also always copies
-      a textual representation based on the image's
+      When you copy the PNG image, the app also always copies a textual
+      representation based on the image's
       <code>alt</code>
       text.
-      <img crossorigin data-mime-type="image/png" width="1160" height="703" alt="Coronavirus H" src="Coronavirus_H.png">
+      <img
+        crossorigin
+        data-mime-type="image/png"
+        width="1160"
+        height="703"
+        alt="Coronavirus H"
+        src="Coronavirus_H.png"
+      />
       <button id="copy-png" type="button">Copy PNG image</button>
     </p>
     <div>
       <h2>Debug</h2>
       <p>
-        The text area below shows what's currently on the clipboard.
-        Try pasting to it!
+        The text area below shows what's currently on the clipboard. Try pasting
+        to it!
       </p>
       <textarea></textarea>
     </div>
     <div class="credits">
-      <h3>
-        Image credits:
-      </h3>
+      <h3>Image credits:</h3>
       <ul>
-        <li><a href="https://en.wikipedia.org/wiki/File:Symptoms_of_coronavirus_disease_2019_2.0.svg">en.wikipedia.org/wiki/File:Symptoms_of_coronavirus_disease_2019_2.0.svg</a></li>
-        <li><a href="https://www.ecdc.europa.eu/sites/default/files/styles/is_large/public/images/Coronavirus_H.png">https://www.ecdc.europa.eu/sites/default/files/styles/is_large/public/images/Coronavirus_H.png</a></li>
+        <li>
+          <a
+            href="https://en.wikipedia.org/wiki/File:Symptoms_of_coronavirus_disease_2019_2.0.svg"
+            >en.wikipedia.org/wiki/File:Symptoms_of_coronavirus_disease_2019_2.0.svg</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.ecdc.europa.eu/sites/default/files/styles/is_large/public/images/Coronavirus_H.png"
+            >https://www.ecdc.europa.eu/sites/default/files/styles/is_large/public/images/Coronavirus_H.png</a
+          >
+        </li>
       </ul>
     </div>
   </body>

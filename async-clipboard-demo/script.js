@@ -5,10 +5,10 @@ const debug = document.querySelector('textarea');
 const copy = async (img) => {
   const mimeType = img.dataset.mimeType;
   let text = null;
-  if (mimeType === 'image/svg+xml') {    
+  if (mimeType === 'image/svg+xml') {
     text = await toSourceBlob(img);
   } else {
-    text = new Blob([img.alt], {type: 'text/plain'})
+    text = new Blob([img.alt], { type: 'text/plain' });
   }
   const clipboardData = {
     'text/plain': text,
@@ -18,19 +18,17 @@ const copy = async (img) => {
     clipboardData[mimeType] = await toOriginBlob(img);
   }
   try {
-    await navigator.clipboard.write([
-      new ClipboardItem(clipboardData),
-    ]);
+    await navigator.clipboard.write([new ClipboardItem(clipboardData)]);
   } catch (err) {
     console.warn(err.name, err.message);
     if (err.name === 'NotAllowedError') {
-      const disallowedMimeType =
-          err.message.replace(/^.*? (\w+\/[^\s]+).*?$/, '$1')
+      const disallowedMimeType = err.message.replace(
+        /^.*? (\w+\/[^\s]+).*?$/,
+        '$1'
+      );
       delete clipboardData[disallowedMimeType];
       try {
-        await navigator.clipboard.write([
-          new ClipboardItem(clipboardData),
-        ]);
+        await navigator.clipboard.write([new ClipboardItem(clipboardData)]);
       } catch (err) {
         throw err;
       }
@@ -53,18 +51,20 @@ const toOriginBlob = async (img) => {
   const response = await fetch(img.src);
   return await response.blob();
 };
-  
+
 const toSourceBlob = async (img) => {
   const response = await fetch(img.src);
   const source = await response.text();
-  return new Blob([source], {type: 'text/plain'});
+  return new Blob([source], { type: 'text/plain' });
 };
 
-[svgButton, pngButton].map((button) => button.addEventListener('click', (e) => {
-  const img = e.target.previousElementSibling;
-  copy(img);
-}));
+[svgButton, pngButton].map((button) =>
+  button.addEventListener('click', (e) => {
+    const img = e.target.previousElementSibling;
+    copy(img);
+  })
+);
 
 document.querySelectorAll('img').forEach((img) => {
-  img.title = img.alt;  
+  img.title = img.alt;
 });

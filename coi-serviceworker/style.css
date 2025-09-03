@@ -12,9 +12,9 @@ html {
   box-sizing: inherit;
 }
 
-body {  
+body {
   font-family: system-ui, sans-serif;
-  max-width: clamp(320px, 90%, 1000px);  
+  max-width: clamp(320px, 90%, 1000px);
   margin: auto;
 }
 

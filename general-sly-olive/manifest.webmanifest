@@ -5,9 +5,11 @@
   "theme_color": "#a0532e",
   "description": "Tree clothes",
   "scope": "/",
-  "icons": [{
-    "src": "./icon.svg",
-    "sizes": "144x144",
-    "type": "image/svg+xml"
-  }]
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "144x144",
+      "type": "image/svg+xml"
+    }
+  ]
 }

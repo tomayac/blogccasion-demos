@@ -1,11 +1,12 @@
 /* CSS files add styling rules to your content */
 
 body {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: 'Benton Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
   margin: 2em;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Sawarabi Mincho', sans-serif;
   font-style: italic;
   color: #373fff;
@@ -16,7 +17,8 @@ li {
   overflow: hidden;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
   height: auto;
 }

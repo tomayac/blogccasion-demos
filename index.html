@@ -1,60 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Index of blogccasion-demos</title>
-  <style>
-    body { font-family: sans-serif; padding: 2rem; }
-    h1 { font-size: 1.5rem; }
-    ul { line-height: 1.8; }
-    a { text-decoration: none; }
-    small { color: gray; }
-  </style>
-</head>
-<body>
-  <h1>Index of <code>blogccasion-demos</code></h1>
-  <ul id="dir-list"><li>Loading...</li></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index of blogccasion-demos</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      ul {
+        line-height: 1.8;
+      }
+      a {
+        text-decoration: none;
+      }
+      small {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Index of <code>blogccasion-demos</code></h1>
+    <ul id="dir-list">
+      <li>Loading...</li>
+    </ul>
 
-  <script>
-    const owner = "tomayac";
-    const repo = "blogccasion-demos";
-    const branch = "main"; // or 'master' depending on repo
-    const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/`;
-    const baseDeployedUrl = `https://${owner}.github.io/${repo}/`;
-    const baseSourceUrl = `https://github.com/${owner}/${repo}/tree/${branch}/`;
+    <script>
+      const owner = 'tomayac';
+      const repo = 'blogccasion-demos';
+      const branch = 'main'; // or 'master' depending on repo
+      const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/`;
+      const baseDeployedUrl = `https://${owner}.github.io/${repo}/`;
+      const baseSourceUrl = `https://github.com/${owner}/${repo}/tree/${branch}/`;
 
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((files) => {
-        const dirs = files.filter(item => item.type === "dir");
-        const list = document.getElementById("dir-list");
-        list.innerHTML = "";
-        dirs.forEach(dir => {
-          const li = document.createElement("li");
+      fetch(apiUrl)
+        .then((res) => res.json())
+        .then((files) => {
+          const dirs = files.filter((item) => item.type === 'dir');
+          const list = document.getElementById('dir-list');
+          list.innerHTML = '';
+          dirs.forEach((dir) => {
+            const li = document.createElement('li');
 
-          const liveLink = document.createElement("a");
-          liveLink.href = `${baseDeployedUrl}${dir.name}/`;
-          liveLink.textContent = dir.name;
-          liveLink.target = "_blank";
+            const liveLink = document.createElement('a');
+            liveLink.href = `${baseDeployedUrl}${dir.name}/`;
+            liveLink.textContent = dir.name;
+            liveLink.target = '_blank';
 
-          const sourceLink = document.createElement("a");
-          sourceLink.href = `${baseSourceUrl}${dir.name}`;
-          sourceLink.textContent = "source";
-          sourceLink.target = "_blank";
+            const sourceLink = document.createElement('a');
+            sourceLink.href = `${baseSourceUrl}${dir.name}`;
+            sourceLink.textContent = 'source';
 
-          li.appendChild(liveLink);
-          li.appendChild(document.createTextNode(" ("));
-          li.appendChild(sourceLink);
-          li.appendChild(document.createTextNode(")"));
+            li.appendChild(liveLink);
+            li.appendChild(document.createTextNode(' ('));
+            li.appendChild(sourceLink);
+            li.appendChild(document.createTextNode(')'));
 
-          list.appendChild(li);
+            list.appendChild(li);
+          });
+        })
+        .catch((err) => {
+          console.error(err);
+          document.getElementById('dir-list').innerHTML =
+            '<li>Error loading directory list.</li>';
         });
-      })
-      .catch((err) => {
-        console.error(err);
-        document.getElementById("dir-list").innerHTML = "<li>Error loading directory list.</li>";
-      });
-  </script>
-</body>
+    </script>
+  </body>
 </html>

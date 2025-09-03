@@ -1,58 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Dark Mode Colors 🌘 Re-Colorization Playground</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Dark Mode Colors</h1>
     <h2>Re-Colorization Playground</h2>
     <p>
-      The purpose of this tool is to learn about re-colorization preferences in the context of dark mode.
+      The purpose of this tool is to learn about re-colorization preferences in
+      the context of dark mode.
     </p>
     <p>
-      ① Please play with re-colorization options and the sliders in an environment where
+      ① Please play with re-colorization options and the sliders in an
+      environment where
       <em>you</em>
-      would commonly use dark mode.
-      Do so until you feel the colors are
+      would commonly use dark mode. Do so until you feel the colors are
       <em>as easy on your eyes as possible</em>
       and the photos are
       <em>as true to their natural look as necessary</em>.
     </p>
     <p>
-      ② Once you're happy with your choices, click the "Submit Survey Results ▷" button after the photos,
-      the survey will be pre-populated with your settings (please don't change anything in order not to falsify the results). Thank you!
+      ② Once you're happy with your choices, click the "Submit Survey Results ▷"
+      button after the photos, the survey will be pre-populated with your
+      settings (please don't change anything in order not to falsify the
+      results). Thank you!
     </p>
     <form>
       <small>
         Choose an option, scroll down, then back up, and play around.
       </small>
       <p>
-        <label><input type="radio" name="mode" id="regular">
-          No Filter</label>
+        <label><input type="radio" name="mode" id="regular" /> No Filter</label>
       </p>
       <p>
-        <label><input type="radio" name="mode" id="grayscale">
-          Only Grayscale</label>
+        <label
+          ><input type="radio" name="mode" id="grayscale" /> Only
+          Grayscale</label
+        >
       </p>
       <p>
-        <label><input type="radio" name="mode" id="invert">
-          Only Invert</label>
+        <label
+          ><input type="radio" name="mode" id="invert" /> Only Invert</label
+        >
       </p>
       <p>
-        <label><input type="radio" name="mode" id="grayscale-invert">
-          Grayscale and Invert</label>
+        <label
+          ><input type="radio" name="mode" id="grayscale-invert" /> Grayscale
+          and Invert</label
+        >
       </p>
       <p>
-        <label><input min="0" max="100" value="50" step="5" type="range" id="grayscale-percentage">Grayscale:</label>
+        <label
+          ><input
+            min="0"
+            max="100"
+            value="50"
+            step="5"
+            type="range"
+            id="grayscale-percentage"
+          />Grayscale:</label
+        >
         <span id="grayscale-percentage-span"></span>
       </p>
       <p>
-        <label><input min="55" max="100" value="100" step="5" type="range" id="inversion-percentage">Inversion:</label>
+        <label
+          ><input
+            min="55"
+            max="100"
+            value="100"
+            step="5"
+            type="range"
+            id="inversion-percentage"
+          />Inversion:</label
+        >
         <span id="inversion-percentage-span"></span>
       </p>
     </form>
@@ -63,8 +88,6 @@
       </small>
       <a target="_blank" href="">Submit Survey Results ▷</a>
     </section>
-    <p>
-      Created by Thomas Steiner (@tomayac).
-    </p>
+    <p>Created by Thomas Steiner (@tomayac).</p>
   </body>
 </html>

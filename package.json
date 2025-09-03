@@ -1,0 +1,25 @@
+{
+  "name": "blogccasion-demos",
+  "version": "1.0.0",
+  "description": "Demos for blog posts on my blog https://blog.tomayac.com.",
+  "homepage": "https://github.com/tomayac/blogccasion-demos#readme",
+  "bugs": {
+    "url": "https://github.com/tomayac/blogccasion-demos/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomayac/blogccasion-demos.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Thomas Steiner (steiner.thomas@gmail.com)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server .",
+    "fix": "npx prettier --write ."
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "prettier": "^3.6.2"
+  }
+}

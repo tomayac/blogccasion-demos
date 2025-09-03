@@ -6,13 +6,13 @@ self.addEventListener('activate', (activateEvent) => {
   return self.clients.claim();
 });
 
-self.addEventListener('fetch', (fetchEvent) => {  
+self.addEventListener('fetch', (fetchEvent) => {
   const request = fetchEvent.request;
   const url = new URL(request.url);
   const destination = request.destination;
   let message;
   if (destination) {
-    let icon = '';    
+    let icon = '';
     switch (destination) {
       case 'audio':
         icon = '\uD83D\uDD08';
@@ -24,19 +24,19 @@ self.addEventListener('fetch', (fetchEvent) => {
         icon = '\uD83D\uDCC4';
         break;
       case 'embed':
-        icon = '\uD83D\uDECF';  
+        icon = '\uD83D\uDECF';
         break;
       case 'font':
-        icon = '\uD83D\uDD24';  
+        icon = '\uD83D\uDD24';
         break;
       case 'image':
-        icon = '\uD83D\uDDBC';  
+        icon = '\uD83D\uDDBC';
         break;
       case 'manifest':
-        icon = '\uD83D\uDCC3';  
+        icon = '\uD83D\uDCC3';
         break;
       case 'object':
-        icon = '\uD83D\uDCCE';  
+        icon = '\uD83D\uDCCE';
         break;
       case 'paintworklet':
         icon = '\uD83D\uDC68\u200D\uD83C\uDFA8';
@@ -73,18 +73,17 @@ self.addEventListener('fetch', (fetchEvent) => {
   } else {
     message = `\u26D4\uFE0F Request for <a href="${url}">${url}</a> did not have a type.`;
   }
-  messageClients(message);    
+  messageClients(message);
   console.log(message);
-  return fetch(request, {mode: 'no-cors'});
+  return fetch(request, { mode: 'no-cors' });
 });
 
 const messageClients = (message) => {
-  self.clients.matchAll()
-  .then((clients) => {
+  self.clients.matchAll().then((clients) => {
     clients.forEach((client) => {
       client.postMessage({
         command: 'broadcast',
-        message: message
+        message: message,
       });
     });
   });

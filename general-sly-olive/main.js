@@ -18,9 +18,8 @@ async function main() {
 async function registerServiceWorker() {
   try {
     print('Registering service worker...');
-    await navigator.serviceWorker.register('serviceworker.js')
+    await navigator.serviceWorker.register('serviceworker.js');
     printLn('success.');
-
   } catch (e) {
     printLn('Oh noes: ' + e);
   }

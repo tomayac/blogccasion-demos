@@ -1,5 +1,5 @@
 :root {
-  color-scheme: dark light;  
+  color-scheme: dark light;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,7 +24,7 @@ a {
 
 /* Footnote text styling. */
 rt {
-  background-color: #eee;  
+  background-color: #eee;
   color: #111;
   font-size: 0.75rem;
   padding: 0.2rem;
@@ -35,7 +35,7 @@ rt {
 /* Images in footnote text styling. */
 rt img {
   width: 100%;
-  height: auto;  
+  height: auto;
   display: block;
 }
 
@@ -47,13 +47,11 @@ ruby:after {
   vertical-align: top;
 }
 
-
 /* Behavior */
-
 
 /* Set up the footnote counter and display style. */
 body {
-  counter-reset: footnotes;  
+  counter-reset: footnotes;
 }
 
 /* Make footnote text appear as `inline-block`. */
@@ -64,7 +62,7 @@ ruby {
 /* Display the actual footnote [1]. */
 ruby:after {
   counter-increment: footnotes;
-  content: " [" counter(footnotes) "]";  
+  content: ' [' counter(footnotes) ']';
 }
 
 /* Remove the focus ring. */
@@ -74,7 +72,7 @@ ruby:focus {
 
 /* Display the footnote text. */
 ruby:focus rt {
-  display: var(--footnote-display);  
+  display: var(--footnote-display);
 }
 
 /* Hide footnote text by default. */

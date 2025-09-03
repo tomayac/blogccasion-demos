@@ -1,16 +1,20 @@
 const startDrawing = () => {
-  const button = document.querySelector("button");
-  const video = document.querySelector("video");
-  const canvas = document.querySelector("canvas");
-  const ctx = canvas.getContext("2d");
-  const fpsInfo = document.querySelector("#fps-info");
-  const metadataInfo =  document.querySelector("#metadata-info");
+  const button = document.querySelector('button');
+  const video = document.querySelector('video');
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext('2d');
+  const fpsInfo = document.querySelector('#fps-info');
+  const metadataInfo = document.querySelector('#metadata-info');
 
-  button.addEventListener('click', () => video.paused ? video.play() : video.pause());
+  button.addEventListener('click', () =>
+    video.paused ? video.play() : video.pause()
+  );
 
   video.addEventListener('play', () => {
     if (!('requestVideoFrameCallback' in HTMLVideoElement.prototype)) {
-      return alert('Your browser does not support the `Video.requestVideoFrameCallback()` API.');
+      return alert(
+        'Your browser does not support the `Video.requestVideoFrameCallback()` API.'
+      );
     }
   });
 
@@ -35,8 +39,7 @@ const startDrawing = () => {
     video.requestVideoFrameCallback(updateCanvas);
   };
 
-  video.src =
-    "Big_Buck_Bunny_360_10s_20MB.mp4";
+  video.src = 'Big_Buck_Bunny_360_10s_20MB.mp4';
   video.requestVideoFrameCallback(updateCanvas);
 };
 

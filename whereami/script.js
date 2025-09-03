@@ -11,18 +11,17 @@
   const wakelock = document.getElementById('wakelock');
 
   if ('getWakeLock' in navigator) {
-    wakelock.textContent = "Wake lock not created yet.";
+    wakelock.textContent = 'Wake lock not created yet.';
     try {
       wakeLockObj = await navigator.getWakeLock('system');
       wakeLockObj.addEventListener('activechange', () => {
         wakelock.textContent = `The ${wakeLockObj.type} wake lock is ${wakeLockObj.active ? 'active' : 'not active'}.`;
       });
-    }
-    catch (err) {
+    } catch (err) {
       console.error('Could not obtain wake lock', err);
     }
   } else {
-    wakelock.textContent = "Wake lock not supported.";
+    wakelock.textContent = 'Wake lock not supported.';
   }
 
   const toggleWakeLock = () => {
@@ -47,11 +46,12 @@
   };
 
   const startTracking = () => {
-
     ping = setInterval(() => {
       const timestamp = new Date();
-      fetch(`https://tomayac.github.io/blogccasion-demos/thereami/ping?userAgent=${encodeURIComponent(userAgent)}&timestamp=${timestamp}`);
-    }, 30000)
+      fetch(
+        `https://tomayac.github.io/blogccasion-demos/thereami/ping?userAgent=${encodeURIComponent(userAgent)}&timestamp=${timestamp}`
+      );
+    }, 30000);
 
     const success = async (pos) => {
       const crd = pos.coords;
@@ -66,7 +66,9 @@
           </div>`;
       log.appendChild(li);
       try {
-        fetch(`https://tomayac.github.io/blogccasion-demos/thereami/track?latitude=${crd.latitude}&longitude=${crd.longitude}&userAgent=${encodeURIComponent(userAgent)}&timestamp=${timestamp}`);
+        fetch(
+          `https://tomayac.github.io/blogccasion-demos/thereami/track?latitude=${crd.latitude}&longitude=${crd.longitude}&userAgent=${encodeURIComponent(userAgent)}&timestamp=${timestamp}`
+        );
       } catch (err) {
         console.error('Logging failed', err);
       }
@@ -79,7 +81,7 @@
     const options = {
       enableHighAccuracy: true,
       timeout: 5000,
-      maximumAge: 0
+      maximumAge: 0,
     };
 
     log.innerHTML = '';

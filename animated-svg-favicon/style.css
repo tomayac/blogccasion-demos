@@ -16,7 +16,8 @@ p {
   margin-bottom: 4rem;
 }
 
-img, iframe {
+img,
+iframe {
   display: block;
   width: 100px;
   height: 100px;
