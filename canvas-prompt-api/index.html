@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="origin-trial"
+      content="AvKXZEAcZSd7J6+HLZsuZ4AF4+rtIB9u1LUCRiB+3HvhiP1ncm1OIjTqb3h/bUobHYJA1qAyGYuQ0iGwxJt1rQ8AAABleyJvcmlnaW4iOiJodHRwczovL3RvbWF5YWMuZ2l0aHViLmlvOjQ0MyIsImZlYXR1cmUiOiJBSVByb21wdEFQSU11bHRpbW9kYWxJbnB1dCIsImV4cGlyeSI6MTc3NDMxMDQwMH0="
+    />
     <title>Canvas Clock</title>
     <style>
       :root {
@@ -100,16 +104,16 @@
           ctx.fillStyle = colorSwitch.checked
             ? themeSwitch.checked
               ? 'white'
-              : 'black'
+              : '#121212'
             : colorScheme === 'dark'
-              ? 'black'
+              ? '#121212'
               : 'white';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           ctx.fillStyle = colorSwitch.checked
             ? 'red'
             : colorScheme === 'dark'
               ? 'white'
-              : 'black';
+              : '#121212';
 
           ctx.fillText(timeString, x, y);
 
