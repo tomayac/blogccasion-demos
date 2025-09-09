@@ -104,16 +104,16 @@
           ctx.fillStyle = colorSwitch.checked
             ? themeSwitch.checked
               ? 'white'
-              : '#121212'
+              : '#000000'
             : colorScheme === 'dark'
-              ? '#121212'
+              ? '#000000'
               : 'white';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           ctx.fillStyle = colorSwitch.checked
             ? 'red'
             : colorScheme === 'dark'
               ? 'white'
-              : '#121212';
+              : '#000000';
 
           ctx.fillText(timeString, x, y);
 
